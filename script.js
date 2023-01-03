@@ -2,7 +2,8 @@ let duties = [];
 
 document.querySelector('#todoForm').addEventListener('submit', (event) => {
     event.preventDefault();
-    
+    let objectDuties = {duties: event.target.elements.input, id: uniqueid()};
+    duties.push(objectDuties);
 });
 
 
