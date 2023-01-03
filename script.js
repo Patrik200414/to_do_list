@@ -7,6 +7,22 @@ document.querySelector('#todoForm').addEventListener('submit', (event) => {
 });
 
 
+function Render(array){
+    let string = '';
+    for(let item of array){
+        string += `
+        <li id="${array.id}">
+            <div class="todo-element-container">
+                <h3>${array.duties}</h3>
+                <button></button>
+                <button></button>
+            </div>
+        </li>`
+    }
+    document.querySelector('#todoList').innerHTML = string;
+}
+
+
 function uniqueid(){
     // always start with a letter (for DOM friendlyness)
     var idstr=String.fromCharCode(Math.floor((Math.random()*25)+65));
