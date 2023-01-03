@@ -15,8 +15,27 @@ header,form{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 header{
     font-size: 1.5rem;
+}
+.input{
+    padding: 0.5rem;
+    font-size: 2em;
+    border: none;
+    background-color: white;
+}
+.send-todo{
+    color: #276174;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    border: none;
+    font-size: 2em;
+    padding: 0.5rem;
+}
+.send-todo:hover{
+    background-color: #276174;
+    color: white;
 }
