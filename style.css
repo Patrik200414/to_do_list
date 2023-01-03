@@ -2,9 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto';
 }
 
 body{
-    background: linear-gradient(90deg, #276174, #33c58e, #63fd88);
+    background: linear-gradient(270deg, #276174, #33c58e);
+    color: white;
+    font-family: 'Roboto';
+    min-height: 100vh;
 }
