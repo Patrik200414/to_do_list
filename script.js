@@ -1,9 +1,10 @@
-let duties = [];
+let todos = [];
 
 document.querySelector('#todoForm').addEventListener('submit', (event) => {
     event.preventDefault();
-    let objectDuties = {duties: event.target.elements.input, id: uniqueid()};
-    duties.push(objectDuties);
+    let objectDuties = {duties: event.target.elements.input.value, id: uniqueid()};
+    todos.push(objectDuties);
+    Render(todos);
 });
 
 
@@ -11,9 +12,9 @@ function Render(array){
     let string = '';
     for(let item of array){
         string += `
-        <li id="${array.id}">
+        <li id="${item.id}">
             <div class="todo-element-container">
-                <h3>${array.duties}</h3>
+                <h3>${item.duties}</h3>
                 <button></button>
                 <button></button>
             </div>
