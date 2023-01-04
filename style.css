@@ -69,8 +69,32 @@ header{
     width: 50vw;
     align-self: center;
     margin-bottom: 5vh;
-    padding: 3vh;
     border-radius: 10px;
     margin-left: 0.7vh;
     display: flex;
+    justify-content: space-between;
+}
+.todo h3{
+    padding: 3vh;
+}
+.button-container{
+    width: 14vh;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+}
+.checked,.delete{
+    border: none;
+    width: 7vh;
+    font-size: 20px;
+}
+.checked{
+    background: linear-gradient(270deg, #56ab2f, #9ce73f);
+    color: white;
+    
+}
+.delete{
+    background: linear-gradient(#ff7e5f, #feb47b);
+    color: white;
+    border-radius: 0px 10px 10px 0px;
 }
