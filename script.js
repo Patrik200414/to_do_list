@@ -32,8 +32,18 @@ function Render(object){
     divTodo.append(liTodo, h3Todo, buttonCheck, buttonDelete);
     //Append the element to the ul
     document.querySelector('#todoList').appendChild(divTodo);
+    inputManipulate();
 }
 
+function inputManipulate(){
+    document.querySelector('#input').classList.add('set-when-submitted-input');
+    document.querySelector('#sendTodo').classList.add('set-when-submitted-button');
+    setTimeout(() => {
+        document.querySelector('#input').classList.remove('set-when-submitted-input');
+        document.querySelector('#sendTodo').classList.remove('set-when-submitted-button');
+    }, 1000);
+    document.querySelector('#input').value = '';
+}
 
 function uniqueid(){
     // always start with a letter (for DOM friendlyness)
