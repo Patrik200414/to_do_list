@@ -1,26 +1,37 @@
-let todos = [];
-
 document.querySelector('#todoForm').addEventListener('submit', (event) => {
     event.preventDefault();
     let objectDuties = {duties: event.target.elements.input.value, id: uniqueid()};
-    todos.push(objectDuties);
-    Render(todos);
+    Render(objectDuties);
 });
 
 
-function Render(array){
-    let string = '';
-    for(let item of array){
-        string += `
-        <li id="${item.id}">
-            <div class="todo-element-container">
-                <h3>${item.duties}</h3>
-                <button></button>
-                <button></button>
-            </div>
-        </li>`
-    }
-    document.querySelector('#todoList').innerHTML = string;
+function Render(object){
+    //Creating the todo div
+    let divTodo = document.createElement('div');
+    divTodo.setAttribute('class', 'todo');
+    divTodo.setAttribute('id', object.id);
+    //Creating the li
+    let liTodo = document.createElement('li');
+    //Create the h3
+    let h3Todo = document.createElement('h3');
+    h3Todo.setAttribute('class', 'dutie');
+    h3Todo.innerText = object.duties;
+    //Creating the checked button
+    let buttonCheck = document.createElement('button');
+    buttonCheck.setAttribute('type', 'button');
+    buttonCheck.setAttribute('class', 'checked');
+    buttonCheck.setAttribute('name', 'checked');
+    buttonCheck.innerHTML = '<i class="fas fa-check"></i>';
+    //Creating the delete button
+    let buttonDelete = document.createElement('button');
+    buttonDelete.setAttribute('type', 'button');
+    buttonDelete.setAttribute('class', 'delete');
+    buttonDelete.setAttribute('name', 'delete');
+    buttonDelete.innerHTML = '<i class="fas fa-trash"></i>';
+    //Append the elements to the div
+    divTodo.append(liTodo, h3Todo, buttonCheck, buttonDelete);
+    //Append the element to the ul
+    document.querySelector('#todoList').appendChild(divTodo);
 }
 
 
