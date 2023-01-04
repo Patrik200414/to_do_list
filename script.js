@@ -28,8 +28,12 @@ function Render(object){
     buttonDelete.setAttribute('class', 'delete');
     buttonDelete.setAttribute('name', 'delete');
     buttonDelete.innerHTML = '<i class="fas fa-trash"></i>';
+    //Button container
+    let buttonContainer = document.createElement('div');
+    buttonContainer.setAttribute('class', 'button-container');
+    buttonContainer.append(buttonCheck, buttonDelete);
     //Append the elements to the div
-    divTodo.append(liTodo, h3Todo, buttonCheck, buttonDelete);
+    divTodo.append(liTodo, h3Todo, buttonContainer);
     //Append the element to the ul
     document.querySelector('#todoList').appendChild(divTodo);
     inputManipulate();
