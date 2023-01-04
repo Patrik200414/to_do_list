@@ -4,8 +4,8 @@ document.querySelector('#todoForm').addEventListener('submit', (event) => {
     Render(objectDuties);
 });
 
-
 function Render(object){
+    
     //Creating the todo div
     let divTodo = document.createElement('div');
     divTodo.setAttribute('class', 'todo');
@@ -38,6 +38,27 @@ function Render(object){
     document.querySelector('#todoList').appendChild(divTodo);
     inputManipulate();
 }
+
+
+document.querySelector('#todoList').addEventListener('click', (event) => {
+    let element = event.target;
+    let className = element.classList.value;
+    let idName;
+    if(element.parentElement.parentElement.id == ''){
+        idName = element.parentElement.parentElement.parentElement.id;
+    }
+    else{
+        idName = element.parentElement.parentElement.id;
+    }
+    if(className == 'fas fa-check' || className == 'checked'){
+        document.getElementById(idName).classList.toggle('clickedCheck');
+    }
+})
+
+
+
+
+
 
 function inputManipulate(){
     document.querySelector('#input').classList.add('set-when-submitted-input');
