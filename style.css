@@ -53,3 +53,24 @@ header{
     border-left: none;
     transition: none 1s ease-in;
 }
+
+/*unordered list*/
+.todo-list{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: 7vh;
+    align-content: center;
+    list-style: none;
+}
+.todo{
+    background-color: white;
+    color: black;
+    width: 50vw;
+    align-self: center;
+    margin-bottom: 5vh;
+    padding: 3vh;
+    border-radius: 10px;
+    margin-left: 0.7vh;
+    display: flex;
+}
