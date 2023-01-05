@@ -53,6 +53,12 @@ document.querySelector('#todoList').addEventListener('click', (event) => {
     if(className == 'fas fa-check' || className == 'checked'){
         document.getElementById(idName).classList.toggle('clickedCheck');
     }
+    else if(className == 'fas fa-trash' || className == 'delete'){
+        document.getElementById(idName).classList.add('deleteSlide');
+        setTimeout(function (){
+            document.getElementById(idName).remove();
+        }, 400);
+    }
 })
 
 
